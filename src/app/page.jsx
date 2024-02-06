@@ -12,14 +12,6 @@ export default function Home() {
   const [navbarHeight, setNavbarHeight] = useState(0);
   const [isInView, setIsInView] = useState(false);
 
-  useEffect(() => {
-    console.log(isInView);
-  }, [isInView]);
-
-  useEffect(() => {
-    console.log(navbarHeight);
-  }, [navbarHeight]);
-
   return (
     <main className={styles.main}>
       <NavBar setNavbarHeight={setNavbarHeight} isInView={isInView}/>

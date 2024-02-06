@@ -49,7 +49,7 @@ const Contact = () => {
   }, [isInView])
 
   return (
-    <div className={`${styles.contactSection} acceleratedRendering`} ref={inViewRef} id="contactPage">
+    <div className={`${styles.contactSection} acceleratedRendering`} ref={inViewRef} id="contact">
       <div className={`${styles.contactPage} wrapper`}>
         <motion.div animate={letsTalkControls} initial={{ opacity: 0, x: '-5rem' }} className={styles.contacttext}>
           <h2>Let&apos;s talk</h2>
