@@ -9,12 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.12.1",
+    "framer-motion": "^10.18.0",
+    "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-icons": "^5.0.1",
+    "react-intersection-observer": "^9.5.3",
+    "react-spinners": "^0.13.8",
+    "sass": "^1.69.7"
   },
   "devDependencies": {
+    "@types/node": "20.11.16",
+    "@types/react": "18.2.54",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "node-sass": "^9.0.0"
   }
 }
