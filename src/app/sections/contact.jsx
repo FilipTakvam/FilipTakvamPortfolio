@@ -52,7 +52,7 @@ const Contact = () => {
     <div className={`${styles.contactSection} acceleratedRendering`} ref={inViewRef} id="contactPage">
       <div className={`${styles.contactPage} wrapper`}>
         <motion.div animate={letsTalkControls} initial={{ opacity: 0, x: '-5rem' }} className={styles.contacttext}>
-          <h2>Let's talk</h2>
+          <h2>Let&apos;s talk</h2>
           <p>Feel free to contact me <br />to ask anything or just say hi...</p>
         </motion.div>
 
