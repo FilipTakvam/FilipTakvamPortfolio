@@ -18,7 +18,7 @@ function CrushedSpeaker() {
                 <PortfolioImage src='/CrushedSpeaker/LandingPage.png' alt='Hero image of Maxivent OW' />
                 <PortfolioImage src='/CrushedSpeaker/Scope.png' alt='Scope of work and time table' />
                 <PortfolioImage src='/CrushedSpeaker/SemanticWords.png' alt='Problems Title' />
-                <PortfolioImage src='/CrushedSpeaker/ClayAnimationGIF.gif' alt='Overview of Maxivent OW' />
+                {/* <PortfolioImage src='/CrushedSpeaker/ClayAnimationGIF.gif' alt='Overview of Maxivent OW' /> */}
                 <PortfolioImage src='/CrushedSpeaker/ComputerScreen.png' alt='Repairability' />
                 <PortfolioImage src='/CrushedSpeaker/Balls.png' alt='Exploded view' />
                 <PortfolioImage src='/CrushedSpeaker/Underneath.png' alt='Air flow' />
