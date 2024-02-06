@@ -15,20 +15,20 @@ function CrushedSpeaker() {
                     <IoClose />
                 </Link>
 
-                <PortfolioImage src='/CrushedSpeaker/LandingPage.png' alt='Hero image of Maxivent OW' />
-                <PortfolioImage src='/CrushedSpeaker/Scope.png' alt='Scope of work and time table' />
-                <PortfolioImage src='/CrushedSpeaker/SemanticWords.png' alt='Problems Title' />
-                <PortfolioImage src='/CrushedSpeaker/animation.gif' alt='Overview of Maxivent OW' />
-                <PortfolioImage src='/CrushedSpeaker/ComputerScreen.png' alt='Repairability' />
-                <PortfolioImage src='/CrushedSpeaker/Balls.png' alt='Exploded view' />
-                <PortfolioImage src='/CrushedSpeaker/Underneath.png' alt='Air flow' />
-                <PortfolioImage src='/CrushedSpeaker/conductive.png' alt='Pressing button' />
-                <PortfolioImage src='/CrushedSpeaker/Cable.png' alt='Clear feedback text' />
-                <PortfolioImage src='/CrushedSpeaker/OverviewParts.png' alt='UI Animation' />
-                <PortfolioImage src='/CrushedSpeaker/Packaging.png' alt='Filter change' />
-                <PortfolioImage src='/CrushedSpeaker/PerspectiveMultiple.png' alt='Filter change' />
-                <PortfolioImage src='/CrushedSpeaker/Evaluation.png' alt='More than render text' />
-                <PortfolioImage src='/CrushedSpeaker/LivingRoom.png' alt='Image collage of process' />
+                <PortfolioImage src='/CrushedSpeaker/LandingPage.png' alt='Hero image of the Crushed Speaker' />
+                <PortfolioImage src='/CrushedSpeaker/Scope.png' alt='The orginal project brief' />
+                <PortfolioImage src='/CrushedSpeaker/SemanticWords.png' alt='Semantic words of the speaker' />
+                <PortfolioImage src='/CrushedSpeaker/animation.gif' alt='Animation involving clay and steel ball' />
+                <PortfolioImage src='/CrushedSpeaker/ComputerScreen.png' alt='Process picture of CAD' />
+                <PortfolioImage src='/CrushedSpeaker/Balls.png' alt='Material Exploration' />
+                <PortfolioImage src='/CrushedSpeaker/Underneath.png' alt='Underneath view' />
+                <PortfolioImage src='/CrushedSpeaker/conductive.png' alt='Hand pressing conductive fabric' />
+                <PortfolioImage src='/CrushedSpeaker/Cable.png' alt='Cable' />
+                <PortfolioImage src='/CrushedSpeaker/OverviewParts.png' alt='Overview of parts' />
+                <PortfolioImage src='/CrushedSpeaker/Packaging.png' alt='Packaging' />
+                <PortfolioImage src='/CrushedSpeaker/PerspectiveMultiple.png' alt='Multipe crushed speakers' />
+                <PortfolioImage src='/CrushedSpeaker/Evaluation.png' alt='Evaluation of the Semantic words' />
+                <PortfolioImage src='/CrushedSpeaker/LivingRoom.png' alt='Final shoot' />
                 <nav className={styles.navbar}>
                     <Link href='/maxiventow'>
                         <div className={styles.navLink}>
