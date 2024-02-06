@@ -60,8 +60,8 @@ const Contact = () => {
 
           <div className={styles.inputrow}>
             <div className={styles.inputContainer}>
-              <label for="username">Name*</label>
-              <input type="text" required name="user_name" id="username" />
+              <label>Name*</label>
+              <input type="text" required name="user_name"/>
             </div>
             <div className={styles.inputContainer}>
               <label>Email*</label>
