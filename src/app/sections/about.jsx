@@ -98,7 +98,7 @@ const About = ({ setIsInView, navbarHeight }) => {
             </motion.div>
           </motion.div>
 
-          <motion.div animate={talkControls} initial={{ opacity: 0 }}><Link className={styles.sayHello} href="#contactPage" scroll={true}>Want to get to know me better?</Link></motion.div>
+          <motion.div animate={talkControls} initial={{ opacity: 0 }}><Link className={styles.sayHello} href="#contact" scroll={true}>Want to get to know me better?</Link></motion.div>
 
         </div>
 
