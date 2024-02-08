@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from '../styles/projects.module.scss';
 import { useScroll, motion, useMotionValueEvent, useAnimationControls, AnimatePresence } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
+import Scroll from '../components/scroll';
 
 const itemsContainer = {
   hidden: { opacity: 0 },
@@ -53,6 +54,7 @@ const Projects = ({ navbarHeight }) => {
 
   const [inViewRef, isInView] = useInView({ threshold: 0.5, triggerOnce: true });
   const [inViewRef2, isInView2] = useInView({ threshold: 0.6, triggerOnce: true });
+  const [inViewRef3, isInView3] = useInView({ threshold: 0.01});
   const animationControls = useAnimationControls();
 
   const { scrollYProgress } = useScroll({
@@ -87,9 +89,10 @@ const Projects = ({ navbarHeight }) => {
   return (
     <section className={`${styles.projectsSection} acceleratedRendering`} ref={container} id="projects">
       <div ref={inViewRef} className={`${styles.projectsContainer} wrapper ${styles.desktop}`} style={{ top: `${navbarHeight}px` }}>
+        <Scroll isInView={isInView3}/>
         <div className={`${styles.projectsListContainer}`} style={{ height: `calc(100svh - ${navbarHeight}px)` }}>
           <div className={styles.projectsList}>
-            <h2>Projects</h2>
+            <h2 ref={inViewRef3}>Projects</h2>
             <motion.ul variants={itemsContainer} initial="hidden" animate={animationControls}>
               {projects.map((project, index) => (
                 <motion.li key={index} variants={items}>
@@ -103,7 +106,6 @@ const Projects = ({ navbarHeight }) => {
               ))}
             </motion.ul>
           </div>
-
           <p>PSST... CLICK ON THE NAMES TO <br />GET A MORE DETAILED VIEW OF THE PROJECTS</p>
         </div>
 
@@ -179,7 +181,7 @@ const Projects = ({ navbarHeight }) => {
                 exit="hide"
                 src="/MaxiventWebsite.png" alt="Maxivent OW" className={styles.projectImage} />
             }
-            {(activeProject === 1) &&
+            {(activeProject === 2) &&
               <motion.img
                 key="willys"
                 variants={imageAnimation}
@@ -188,7 +190,7 @@ const Projects = ({ navbarHeight }) => {
                 exit="hide"
                 src="/WillysWebsite.png" alt="Willys" className={styles.projectImage} />
             }
-            {(activeProject === 2) &&
+            {(activeProject === 1) &&
               <motion.img
                 key="crushedspeaker"
                 variants={imageAnimation}

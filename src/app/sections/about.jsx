@@ -79,7 +79,7 @@ const About = ({ setIsInView, navbarHeight }) => {
             <motion.div variants={items}>
               <h4>Education</h4>
               <h5>Chalmers University of Technology, Gothenburg｜<span>2019-2024</span></h5>
-              <p>MEng Degree - Industrial Design Engineering</p>
+              <p>M.Sc. Degree - Industrial Design Engineering</p>
 
               <h5 className={styles.notfirsth4}>Polhemsgymnasiet, Gothenburg｜<span>2014-2017</span></h5>
               <p>High school Diploma - Orientation of Technology and Design</p>
