@@ -189,7 +189,93 @@ form.contact {
     }
 }
 
-@media only screen and (max-width: breakpoints.$sm) {
+@media only screen and (max-width: breakpoints.$xl) {
+
+    .contactSection {
+        height: auto;
+    }
+
+    .contactPage {
+        padding: 0 8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacttext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        height: 100%;
+        padding-bottom: 2rem;
+
+        h2 {
+            font-size: 5rem;
+            color: colors.$primary;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+            br {
+                display: none;
+            }
+        }
+    }
+
+    form.contact {
+        button.sendbutton {
+            transform: translateY(-1rem);
+            background-color: colors.$strong_neutral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            border: none;
+            font-size: 1.3rem;
+            color: colors.$secondary;
+            padding: 0.8rem 3rem 0.8rem 3rem;
+            width: 100%;
+            margin-top: 1rem;
+
+            transform-origin: center;
+            transition: 200ms;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .footer {
+        height: max-content;
+        width: 100%;
+        background-color: colors.$primary;
+        position: relative;
+        padding: 1rem 4rem;
+    }
+
+    .footerContainer {
+        justify-content: space-between;
+    }
+
+}
+
+@media only screen and (max-width: breakpoints.$lg) {
+
+    .contactSection {
+        height: auto;
+    }
+
+    .contactPage {
+        padding: 0 4rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: breakpoints.$md) {
 
     .contactSection {
         height: auto;

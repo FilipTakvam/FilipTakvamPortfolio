@@ -34,7 +34,6 @@
   }
 }
 
-
 .projectsList {
 
   h2 {
@@ -111,6 +110,63 @@
 
 .mobile {
   display: none;
+}
+
+@media only screen and (max-width: breakpoints.$xl) {
+  .projectsList {
+
+    h2 {
+      padding-top: 4rem;
+      color: colors.$strong_neutral;
+      font-size: 5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  
+    ul {
+      padding-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: breakpoints.$md) {
+
+  .projectsContainer {
+    padding: 0 1.5rem;
+  }
+
+  .projectsList {
+    h2 {
+      padding-top: 4rem;
+      color: colors.$strong_neutral;
+      font-size: 3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  
+    ul {
+      padding-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .link{
+    color: colors.$soft_neutral;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+    white-space: nowrap;
+  
+    &:hover {
+      color: colors.$primary;
+    }
+  }
 }
 
 @media only screen and (max-width: breakpoints.$sm) {

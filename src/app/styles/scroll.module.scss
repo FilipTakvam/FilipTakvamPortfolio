@@ -9,6 +9,7 @@
 	bottom: 2.5rem;
 	left: 50%;
 	transform: translateX(-50%);
+	z-index: 99999;
 	&::before {
 		content: '';
 		width: 10px;
