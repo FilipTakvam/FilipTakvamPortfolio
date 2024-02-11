@@ -1,13 +1,16 @@
 import React from 'react'
+import Image from 'next/image';
 
-function PortfolioImage({src, alt}) {
+function PortfolioImage({ src, alt }) {
   return (
-    <img 
-      src={src} 
-      alt={alt}
-      style={{display: 'block', width: '100%', height: 'auto', margin: 0}} 
-    />
-  )
+  <Image
+    src={src}
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{ width: '100%', height: 'auto' }} // optional
+  />
+  );
 }
 
-export default PortfolioImage
+export default PortfolioImage;
