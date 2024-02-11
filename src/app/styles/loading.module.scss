@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
     height: 100dvh;
     width: 100dvw;
     z-index: 99999;
@@ -21,7 +23,23 @@
         p {
             color: #000000;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 400;
         }
     }
+}
+
+.loadingBar {
+    width: 50dvw;
+    height: 2rem;
+    border: 2px solid colors.$strong_neutral;
+    overflow: hidden;
+    padding: 0.4rem;
+}
+
+.bar {
+    height: 100%;
+    width: 100%;
+    background-color: colors.$strong_neutral;
+    transform-origin: left;
+    transition: all 0.2s ease-out;
 }

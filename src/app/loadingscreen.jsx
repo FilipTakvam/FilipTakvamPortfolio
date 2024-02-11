@@ -1,9 +1,9 @@
 'use client';
 import React, { useEffect } from 'react';
 import styles from './styles/loading.module.scss';
-import { ScaleLoader } from 'react-spinners';
+import Image from 'next/image';
 
-function LoadingScreen() {
+function LoadingScreen({imageCount, finishedCount}) {
   useEffect(() => {
     // Applying on mount
     document.body.style.overflow = "hidden";
@@ -13,12 +13,13 @@ function LoadingScreen() {
     }
   }, [])
   return (
-    <div
-      className={styles.loadingPage}
-    >
+    <div className={styles.loadingPage}>
+      <Image src="/FT.svg" height={100} width={100} className={styles.logo} alt="logotype" />
       <div>
-        <ScaleLoader color="#000000" />
-        <p>The content is being loaded. Please Wait</p>
+        <div className={styles.loadingBar}>
+          <div className={styles.bar} style={{transform: `scaleX(${imageCount/finishedCount})`}}></div>
+        </div>
+        <p>Just a Moment While the Project is Loading</p>
       </div>
     </div>
   )

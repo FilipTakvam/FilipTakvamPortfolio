@@ -14,7 +14,7 @@ function CrushedSpeaker() {
     return (
         <div className={styles.background}>
             {imageCount < 14 &&
-                <LoadingScreen />
+                <LoadingScreen finishedCount={14} imageCount={imageCount} />
             }
             <div className={`${styles.wrapper} wrapper`}>
                 <Link href='/' className={styles.closeIcon}>

@@ -15,7 +15,7 @@ export default function MaxiventOW() {
         <>
         <div className={styles.background}>
         {imageCount < 15 &&
-         <LoadingScreen/>
+         <LoadingScreen finishedCount={15} imageCount={imageCount}/>
         }
             <div className={`${styles.wrapper} wrapper`}>
                 <Link href='/' className={styles.closeIcon}>
