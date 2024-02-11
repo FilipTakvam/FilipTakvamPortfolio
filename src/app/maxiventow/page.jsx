@@ -1,34 +1,42 @@
-import React from 'react';
+'use client';
+import React, { useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import PortfolioImage from '../components/portfolioimage';
 import styles from '../styles/portfolio.module.scss';
 import { TiArrowLeft, TiArrowRight } from 'react-icons/ti';
 import { IoClose } from "react-icons/io5";
+import LoadingScreen from "../loadingscreen.jsx";
 
 export default function MaxiventOW() {
+    const [imageCount, setImageCount] = useState(0);
+
     return (
+        <>
         <div className={styles.background}>
+        {imageCount < 15 &&
+         <LoadingScreen/>
+        }
             <div className={`${styles.wrapper} wrapper`}>
                 <Link href='/' className={styles.closeIcon}>
                     <IoClose />
                 </Link>
 
-                <PortfolioImage src='/MaxiventOW/HeroImage.png' alt='Hero image of Maxivent OW' />
-                <PortfolioImage src='/MaxiventOW/DesignProcess.png' alt='Scope of work and time table' />
-                <PortfolioImage src='/MaxiventOW/Problems.png' alt='Problems Title' />
-                <PortfolioImage src='/MaxiventOW/OverviewFaded.png' alt='Overview of Maxivent OW' />
-                <PortfolioImage src='/MaxiventOW/Repairability.png' alt='Repairability' />
-                <PortfolioImage src='/MaxiventOW/Teardown.png' alt='Exploded view' />
-                <PortfolioImage src='/MaxiventOW/Airflow.png' alt='Air flow' />
-                <PortfolioImage src='/MaxiventOW/UI_pressbutton.png' alt='Pressing button' />
-                <PortfolioImage src='/MaxiventOW/ClearFeedbackText.png' alt='Clear feedback text' />
-                <PortfolioImage src='/MaxiventOW/UI_above_lights.gif' alt='UI Animation' />
-                <PortfolioImage src='/MaxiventOW/FilterChange.png' alt='Filter change' />
-                <PortfolioImage src='/MaxiventOW/PCB.png' alt='Filter change' />
-                <PortfolioImage src='/MaxiventOW/MoreThanRender.png' alt='More than render text' />
-                <PortfolioImage src='/MaxiventOW/Process.png' alt='Image collage of process' />
-                <PortfolioImage src='/MaxiventOW/StudioShot.png' alt='Image collage of process' />
+                <PortfolioImage src='/MaxiventOW/HeroImage.png' alt='Hero image of Maxivent OW' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/DesignProcess.png' alt='Scope of work and time table' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/Problems.png' alt='Problems Title' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/OverviewFaded.png' alt='Overview of Maxivent OW' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/Repairability.png' alt='Repairability' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/Teardown.png' alt='Exploded view' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/Airflow.png' alt='Air flow' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/UI_pressbutton.png' alt='Pressing button' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/ClearFeedbackText.png' alt='Clear feedback text' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/UI_above_lights.gif' alt='UI Animation' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/FilterChange.png' alt='Filter change' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/PCB.png' alt='Filter change' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/MoreThanRender.png' alt='More than render text' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/Process.png' alt='Image collage of process' setImageCount={setImageCount}/>
+                <PortfolioImage src='/MaxiventOW/StudioShot.png' alt='Image collage of process' setImageCount={setImageCount}/>
                 <nav className={styles.navbar}>
                     <Link href='/crushedspeaker'>
                         <div className={styles.navLink}>
@@ -47,5 +55,6 @@ export default function MaxiventOW() {
             </div>
 
         </div>
+        </>
     )
 }
