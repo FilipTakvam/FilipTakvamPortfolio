@@ -17,7 +17,7 @@ function LoadingScreen({imageCount, finishedCount}) {
       <Image src="/FT.svg" height={100} width={100} className={styles.logo} alt="logotype" />
       <div>
         <div className={styles.loadingBar}>
-          <div className={styles.bar} style={{transform: `scaleX(${imageCount/finishedCount})`}}></div>
+            <div className={styles.bar} style={{width: `${(imageCount/finishedCount)*100}%`}}></div>
         </div>
         <p>Just a Moment While the Project is Loading</p>
       </div>

@@ -1,4 +1,5 @@
 @use './constants/colors';
+@use './constants/breakpoints';
 
 .loadingPage {
     display: flex;
@@ -20,26 +21,40 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
+
         p {
             color: #000000;
             font-size: 1.2rem;
             font-weight: 400;
+            text-align: center;
         }
     }
 }
 
 .loadingBar {
-    width: 50dvw;
+    width: 60dvw;
     height: 2rem;
     border: 2px solid colors.$strong_neutral;
     overflow: hidden;
     padding: 0.4rem;
+    border-radius: 1rem;
+    position: relative;
 }
 
 .bar {
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    left: 0.4rem;
+    height: 1.2rem;
     background-color: colors.$strong_neutral;
     transform-origin: left;
     transition: all 0.2s ease-out;
+    border-radius: 1rem;
+    max-width: calc(100% - 0.8rem);
+}
+
+@media only screen and (max-width: breakpoints.$md) {
+
+    .loadingBar {
+        width: 80dvw;
+    }
 }
