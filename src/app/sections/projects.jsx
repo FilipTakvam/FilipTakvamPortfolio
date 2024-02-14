@@ -112,40 +112,44 @@ const Projects = ({ navbarHeight }) => {
         <div className={` ${styles.projectImageContainer}`} style={{ height: `calc(100svh - ${navbarHeight}px)` }}>
           <AnimatePresence mode='wait'>
             {(activeProject === 0) &&
-              <motion.img
+              <Link href='/maxiventow'><motion.img
                 key="maxivent"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/MaxiventWebsite.png" alt="Maxivent OW" className={styles.projectImage} />
+                </Link>
             }
             {(activeProject === 2) &&
-              <motion.img
+              <Link href='/selfcheckout'><motion.img
                 key="willys"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/WillysWebsite.png" alt="Willys" className={styles.projectImage} />
+                </Link>
             }
             {(activeProject === 1) &&
-              <motion.img
+              <Link href='/crushedspeaker'><motion.img
                 key="crushedspeaker"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/CrushedSpeakerWebsite.png" alt="CrushedSpeaker" className={styles.projectImage} />
+                </Link>
             }
             {(activeProject === 3) &&
-              <motion.img
+              <Link href='/safetyscanningradar'><motion.img
                 key="safetyscanningradar"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/SafetyScanningRadarWebsite.png" alt="CrushedSpeaker" className={styles.projectImage} />
+                </Link>
             }
           </AnimatePresence>
         </div>
@@ -173,40 +177,44 @@ const Projects = ({ navbarHeight }) => {
         <div className={` ${styles.projectImageContainer}`}>
           <AnimatePresence mode='sync'>
             {(activeProject === 0) &&
-              <motion.img
+              <Link href='/maxiventow'><motion.img
                 key="maxivent"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/MaxiventWebsite.png" alt="Maxivent OW" className={styles.projectImage} />
+                </Link>
             }
             {(activeProject === 2) &&
-              <motion.img
+              <Link href='/selfcheckout'><motion.img
                 key="willys"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/WillysWebsite.png" alt="Willys" className={styles.projectImage} />
+                </Link>
             }
             {(activeProject === 1) &&
-              <motion.img
+              <Link href='/crushedspeaker'><motion.img
                 key="crushedspeaker"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/CrushedSpeakerWebsite.png" alt="CrushedSpeaker" className={styles.projectImage} />
+                </Link>
             }
             {(activeProject === 3) &&
-              <motion.img
+              <Link href='/safetyscanningradar'><motion.img
                 key="safetyscanningradar"
                 variants={imageAnimation}
                 initial="hidden"
                 animate="show"
                 exit="hide"
                 src="/SafetyScanningRadarWebsite.png" alt="CrushedSpeaker" className={styles.projectImage} />
+                </Link>
             }
           </AnimatePresence>
         </div>
