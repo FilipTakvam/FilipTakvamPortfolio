@@ -86,7 +86,7 @@ const NavBar = ({ setNavbarHeight, isInView }) => {
         const height = navbarRef.current.offsetHeight;
         setNavbarHeight(height);
       }
-    };
+  };
 
     const handleWindowResize = () => {
       updateNavbarHeight();
