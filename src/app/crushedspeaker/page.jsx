@@ -44,7 +44,7 @@ function CrushedSpeaker() {
                     <Link href='/'>
                         <Image src="/FT.svg" height={45} width={45} alt="logotype" className={styles.logo} />
                     </Link>
-                    <Link href='/maxiventow'>
+                    <Link href='/willys'>
                         <div className={styles.navLink}>
                             <TiArrowRight style={{ color: '#000000' }} /><p>Next Project</p>
                         </div>

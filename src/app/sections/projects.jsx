@@ -45,7 +45,7 @@ const Projects = ({ navbarHeight }) => {
   const projects = [
     { name: 'Maxivent OW', link: '/maxiventow' },
     { name: 'Crushed speaker', link: '/crushedspeaker' },
-    { name: 'Willys self checkout', link: '/' },
+    { name: 'Willys self checkout', link: '/willys' },
     { name: 'Safety scanning radar', link: '/' },
   ];
 
