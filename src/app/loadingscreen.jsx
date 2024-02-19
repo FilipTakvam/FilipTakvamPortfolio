@@ -7,9 +7,12 @@ function LoadingScreen({imageCount, finishedCount}) {
   useEffect(() => {
     // Applying on mount
     document.body.style.overflow = "hidden";
+    document.getElementsByTagName('html')[0].style.overflow = "hidden";
     // Applying on unmount    
     return () => {
       document.body.style.overflow = "visible";
+
+      document.getElementsByTagName('html')[0].style.overflow = "visible";
     }
   }, [])
   return (
