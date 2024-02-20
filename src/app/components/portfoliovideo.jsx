@@ -44,8 +44,11 @@ function PortfolioVideo({ src, setImageCount, backgroundColor, playPauseColor })
                 }
             </div>
             <video
+                playsInline
+                preload='auto'
+                type='video/mp4'
                 ref={videoRef}
-                src={src}
+                src={`${src}#t=0.001`}
                 style={{ width: '100%', display: 'inline-block' }}
                 onLoadedData={handleVideoLoaded}
                 onCanPlayThrough={handleCanPlayThrough}
