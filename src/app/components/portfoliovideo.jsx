@@ -13,6 +13,7 @@ function PortfolioVideo({ src, setImageCount, backgroundColor, playPauseColor })
             const video = videoRef.current;
             if (play) {
                 video.pause();
+                setPlay(false);
             } else {
                 if (loaded || video.readyState >= 3) { // Check if video is ready to play
                     video.play();
