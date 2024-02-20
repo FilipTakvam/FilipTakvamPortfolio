@@ -22,7 +22,7 @@ function CrushedSpeaker() {
                     <IoClose />
                 </Link>
 
-                <PortfolioImage src='/Willys/LandingPage.png' alt='Hero image of the Willys Self Checkout' setImageCount={setImageCount}/>
+                <PortfolioImage src='/Willys/Hero.png' alt='Hero image of the Willys Self Checkout' setImageCount={setImageCount}/>
                 <PortfolioImage src='/Willys/ScopeOfWork.png' alt='The orginal scope of work and timeline of project' setImageCount={setImageCount}/>
                 <PortfolioImage src='/Willys/HTA.png' alt='HTA' setImageCount={setImageCount}/>
                 <PortfolioImage src='/Willys/CWPHEA.png' alt='CW and PHEA' setImageCount={setImageCount}/>
