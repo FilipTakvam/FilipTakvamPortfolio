@@ -38,7 +38,7 @@ export default function MaxiventOW() {
                 <PortfolioImage src='/MaxiventOW/Process.png' alt='Image collage of process' setImageCount={setImageCount}/>
                 <PortfolioImage src='/MaxiventOW/StudioShot.png' alt='Image collage of process' setImageCount={setImageCount}/>
                 <nav className={styles.navbar}>
-                    <Link href='/crushedspeaker'>
+                    <Link href='/safetyscanningradar'>
                         <div className={styles.navLink}>
                             <TiArrowLeft style={{ color: '#000000' }} /><p>Previous Project</p>
                         </div>
@@ -46,7 +46,7 @@ export default function MaxiventOW() {
                     <Link href='/'>
                         <Image src="/FT.svg" height={45} width={45} alt="logotype" className={styles.logo} />
                     </Link>
-                    <Link href='/willys'>
+                    <Link href='/crushedspeaker'>
                         <div className={styles.navLink}>
                             <TiArrowRight style={{ color: '#000000' }} /><p>Next Project</p>
                         </div>

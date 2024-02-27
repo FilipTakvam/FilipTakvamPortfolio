@@ -39,7 +39,7 @@ function CrushedSpeaker() {
                 <PortfolioImage src='/Willys/Comparison3.png' alt='Comparison' setImageCount={setImageCount}/>
                 <PortfolioImage src='/Willys/End.png' alt='Thank you screen' setImageCount={setImageCount}/>
                 <nav className={styles.navbar}>
-                    <Link href='/maxiventow'>
+                    <Link href='/crushedspeaker'>
                         <div className={styles.navLink}>
                             <TiArrowLeft style={{ color: '#000000' }} /><p>Previous Project</p>
                         </div>
@@ -47,7 +47,7 @@ function CrushedSpeaker() {
                     <Link href='/'>
                         <Image src="/FT.svg" height={45} width={45} alt="logotype" className={styles.logo} />
                     </Link>
-                    <Link href='/maxiventow'>
+                    <Link href='/safetyscanningradar'>
                         <div className={styles.navLink}>
                             <TiArrowRight style={{ color: '#000000' }} /><p>Next Project</p>
                         </div>

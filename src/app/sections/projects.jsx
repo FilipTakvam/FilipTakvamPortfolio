@@ -46,7 +46,7 @@ const Projects = ({ navbarHeight }) => {
     { name: 'Maxivent OW', link: '/maxiventow' },
     { name: 'Crushed speaker', link: '/crushedspeaker' },
     { name: 'Willys self checkout', link: '/selfcheckout' },
-    { name: 'Safety scanning radar', link: '/' },
+    { name: 'Safety scanning radar', link: '/safetyscanningradar' },
   ];
 
   const container = useRef(null);
