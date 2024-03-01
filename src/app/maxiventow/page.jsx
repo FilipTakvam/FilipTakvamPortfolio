@@ -9,7 +9,10 @@ import { IoClose } from "react-icons/io5";
 import LoadingScreen from "../loadingscreen.jsx";
 
 export default function MaxiventOW() {
-    const [imageCount, setImageCount] = useState(0);
+    const [imageCount, setImageCount] = useState(() => {
+        const storedImageCount = localStorage.getItem('imageCount');
+        return storedImageCount ? parseInt(storedImageCount, 10) : 0;
+    });
 
     return (
         <>

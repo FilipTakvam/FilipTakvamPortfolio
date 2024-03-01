@@ -7,15 +7,20 @@ import styles from '../styles/portfolio.module.scss';
 import { TiArrowLeft, TiArrowRight } from 'react-icons/ti';
 import { IoClose } from "react-icons/io5";
 import LoadingScreen from "../loadingscreen.jsx";
+import FullscreenVideo from '../components/fullvideo';
 
-export default function MaxiventOW() {
-    const [imageCount, setImageCount] = useState(0);
+export default function SafetyScanningRadar() {
+
+    const [imageCount, setImageCount] = useState(() => {
+    const storedImageCount = localStorage.getItem('imageCount');
+    return storedImageCount ? parseInt(storedImageCount, 10) : 0;
+    });
 
     return (
         <>
         <div className={styles.background}>
-        {imageCount < 1 &&
-         <LoadingScreen finishedCount={1} imageCount={imageCount}/>
+        {imageCount < 2 &&
+         <LoadingScreen finishedCount={2} imageCount={imageCount}/>
         }
             <div className={`${styles.wrapper} wrapper`}>
                 <Link href='/' className={styles.closeIcon}>
@@ -23,6 +28,7 @@ export default function MaxiventOW() {
                 </Link>
 
                 <PortfolioImage src='/SafetyScanningRadar/LandingPage.png' alt='Hero image of Safety Scanning Radar' setImageCount={setImageCount}/>
+                <FullscreenVideo src='/SafetyScanningRadar/Turnaround.mp4' setImageCount={setImageCount}/>
                 <nav className={styles.navbar}>
                     <Link href='/selfcheckout'>
                         <div className={styles.navLink}>
