@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import PortfolioImage from '../components/portfolioimage';
@@ -9,10 +9,14 @@ import { IoClose } from "react-icons/io5";
 import LoadingScreen from "../loadingscreen.jsx";
 
 function CrushedSpeaker() {
-    const [imageCount, setImageCount] = useState(() => {
-        const storedImageCount = localStorage.getItem('imageCount');
-        return storedImageCount ? parseInt(storedImageCount, 10) : 0;
-        });
+
+    const [imageCount, setImageCount] = useState(0);
+
+    useEffect(() => {
+      const storedImageCount = localStorage.getItem('imageCount');
+      const initialImageCount = storedImageCount ? parseInt(storedImageCount, 10) : 0;
+      setImageCount(initialImageCount);
+    }, []); // Empty dependency array to run only once
 
     return (
         <div className={styles.background}>
