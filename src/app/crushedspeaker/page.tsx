@@ -6,7 +6,7 @@ import PortfolioImage from '../components/portfolioimage';
 import styles from '../styles/portfolio.module.scss';
 import { TiArrowLeft, TiArrowRight } from 'react-icons/ti';
 import { IoClose } from "react-icons/io5";
-import LoadingScreen from "../loadingscreen.jsx";
+import LoadingScreen from '../loadingscreen';
 
 function CrushedSpeaker() {
 
