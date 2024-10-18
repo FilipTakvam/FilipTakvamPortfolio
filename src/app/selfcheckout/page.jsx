@@ -25,7 +25,7 @@ function CrushedSpeaker() {
                 <LoadingScreen finishedCount={16} imageCount={imageCount} />
             }
             <div className={`${styles.wrapper} wrapper`}>
-                <Link href='/' className={styles.closeIcon}>
+                <Link href='/#projects' className={styles.closeIcon}>
                     <IoClose />
                 </Link>
 

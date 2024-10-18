@@ -25,7 +25,7 @@ export default function MaxiventOW() {
          <LoadingScreen finishedCount={15} imageCount={imageCount}/>
         }
             <div className={`${styles.wrapper} wrapper`}>
-                <Link href='/' className={styles.closeIcon}>
+                <Link href='/#projects' className={styles.closeIcon}>
                     <IoClose />
                 </Link>
 

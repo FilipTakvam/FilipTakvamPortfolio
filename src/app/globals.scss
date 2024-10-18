@@ -100,3 +100,15 @@ input{
   background-color: colors.$primary;
   transform-origin: top;
 }
+
+body {
+  transition-property: opacity, transform, filter, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.page-transition {
+  opacity: 0;
+  background-color: colors.$primary;
+  transform: translateY(40px);
+}
