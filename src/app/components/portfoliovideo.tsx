@@ -2,11 +2,18 @@ import React, { useState, useRef } from 'react';
 import { IoPlayCircleOutline, IoPauseCircleOutline } from "react-icons/io5";
 import styles from '../styles/portfoliovideo.module.scss';
 
-function PortfolioVideo({ src, setImageCount, backgroundColor, playPauseColor }) {
+type PortfolioVideoProps = {
+    src: string,
+    setImageCount: React.Dispatch<React.SetStateAction<number>>,
+    backgroundColor: string,
+    playPauseColor: string,
+}
 
-    const videoRef = useRef(null);
-    const [play, setPlay] = useState(false);
-    const [loaded, setLoaded] = useState(false);
+function PortfolioVideo({ src, setImageCount, backgroundColor, playPauseColor }: PortfolioVideoProps) {
+
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+    const [play, setPlay] = useState<boolean>(false);
+    const [loaded, setLoaded] = useState<boolean>(false);
 
     const togglePlay = () => {
         if (videoRef.current) {
@@ -46,7 +53,6 @@ function PortfolioVideo({ src, setImageCount, backgroundColor, playPauseColor })
             <video
                 playsInline
                 preload='auto'
-                type='video/mp4'
                 ref={videoRef}
                 src={`${src}#t=0.001`}
                 style={{ width: '100%', display: 'inline-block' }}

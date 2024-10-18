@@ -10,7 +10,7 @@ import LoadingScreen from '../loadingscreen';
 
 export default function MaxiventOW() {
 
-    const [imageCount, setImageCount] = useState(0);
+    const [imageCount, setImageCount] = useState<number>(0);
 
     useEffect(() => {
       const storedImageCount = localStorage.getItem('imageCount');

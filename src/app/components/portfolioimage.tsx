@@ -1,7 +1,13 @@
 import React from 'react'
 import Image from 'next/image';
 
-function PortfolioImage({ src, alt, setImageCount }) {
+type PortfolioImageProps = {
+  src: string,
+  alt: string,
+  setImageCount: React.Dispatch<React.SetStateAction<number>>,
+}
+
+function PortfolioImage({ src, alt, setImageCount }: PortfolioImageProps) {
   
   const handleImageLoad = () => {
     setImageCount((prevState) => prevState + 1);

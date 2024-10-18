@@ -11,7 +11,7 @@ import LoadingScreen from '../loadingscreen';
 
 function CrushedSpeaker() {
 
-    const [imageCount, setImageCount] = useState(0);
+    const [imageCount, setImageCount] = useState<number>(0);
 
     useEffect(() => {
       const storedImageCount = localStorage.getItem('imageCount');

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/scroll.module.scss';
 
-function Scroll({isInView}) {
+function Scroll({isInView}: {isInView: boolean}) {
 
   return (
     <div

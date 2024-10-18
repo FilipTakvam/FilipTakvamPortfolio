@@ -1,12 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
-function FullscreenVideo({ src, setImageCount }) {
+type FullscreenVideoProps = {
+    src: string,
+    setImageCount: React.Dispatch<React.SetStateAction<number>>;
+}
 
-    const videoRef = useRef(null);
+function FullscreenVideo({ src, setImageCount }: FullscreenVideoProps) {
+
+    const videoRef = useRef<HTMLVideoElement | null>(null);
 
     const handleVideoLoaded = () => {
         setImageCount(prevCount => prevCount + 1);
-        console.log("Loaded");
     }
 
     return (
@@ -17,7 +21,6 @@ function FullscreenVideo({ src, setImageCount }) {
                 muted
                 playsInline
                 preload='auto'
-                type='video/mp4'
                 ref={videoRef}
                 src={`${src}#t=0.001`}
                 style={{ width: '100%', display: 'inline-block' }}

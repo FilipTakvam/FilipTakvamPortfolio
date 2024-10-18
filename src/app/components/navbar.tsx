@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/navbar.module.scss';
 import Image from 'next/image';
 import NavTrigger from './navtrigger';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import breakpoints from '../styles/constants/breakpoints';
 import Link from 'next/link';
 
-const navLinksVariants = {
+const navLinksVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -17,29 +17,35 @@ const navLinksVariants = {
   },
 };
 
-const linkVariants = {
+const linkVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const menuSlide = {
+const menuSlide: Variants = {
   initial: { x: "calc(100% + 100px)" },
   enter: { x: "0", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
   exit: { x: "calc(100% + 100px)", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
 }
 
-const slide = {
-  initial: {x: 80, opacity: 0.0},
-  enter: i => ({x: 0, opacity: 1, transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.06 * i}}),
-  exit: i => ({x: 80, opacity: 0, transition: {duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.06 * i}})
+const slide: Variants = {
+  initial: { x: 80, opacity: 0.0 },
+  enter: (i: number) => ({ x: 0, opacity: 1, transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.06 * i } }),
+  exit: (i: number) => ({ x: 80, opacity: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.06 * i } })
 }
 
-const NavBar = ({ setNavbarHeight, isInView }) => {
+type NavBarProps = {
+  setNavbarHeight: React.Dispatch<React.SetStateAction<number>>,
+  isInView: boolean,
+}
+
+
+const NavBar = ({ setNavbarHeight, isInView }: NavBarProps) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const navbarRef = useRef(null);
-  const[initialPath, setInitialPath] = useState(null);
-  const[targetPath, setTargetPath] = useState(null);
+  const navbarRef = useRef<HTMLElement | null>(null);
+  const [initialPath, setInitialPath] = useState<string>();
+  const [targetPath, setTargetPath] = useState<string>();
 
   useEffect(() => {
     setInitialPath(`M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q-100 ${window.innerHeight / 2} 100 0`);
@@ -47,7 +53,7 @@ const NavBar = ({ setNavbarHeight, isInView }) => {
   }, []);
 
 
-  const curve = {
+  const curve: Variants = {
     initial: {
       d: initialPath
     },
@@ -62,11 +68,11 @@ const NavBar = ({ setNavbarHeight, isInView }) => {
   }
 
   const isBrowser = () => typeof window !== 'undefined'; //The approach recommended by Next.js
-  
+
 
   function scrollToTop() {
-      if (!isBrowser()) return;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!isBrowser()) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function scrollToTopMobile() {
@@ -86,7 +92,7 @@ const NavBar = ({ setNavbarHeight, isInView }) => {
         const height = navbarRef.current.offsetHeight;
         setNavbarHeight(height);
       }
-  };
+    };
 
     const handleWindowResize = () => {
       updateNavbarHeight();
@@ -138,7 +144,7 @@ const NavBar = ({ setNavbarHeight, isInView }) => {
         </motion.li>
       </motion.ul>
       <NavTrigger isMobileNavOpen={isMobileNavOpen} setIsMobileNavOpen={setIsMobileNavOpen} isActive={isActive} setIsActive={setIsActive} />
-      <AnimatePresence motion="wait">
+      <AnimatePresence mode="wait">
         {isMobileNavOpen && (
           <motion.div className={styles.mobileNav}
             variants={menuSlide}
@@ -148,27 +154,27 @@ const NavBar = ({ setNavbarHeight, isInView }) => {
           >
             <motion.ul className={styles.navLinks}>
               <motion.li
-                  custom={1}
-                  variants={slide}
-                  initial="initial" 
-                  animate="enter" 
-                  exit="exit">
+                custom={1}
+                variants={slide}
+                initial="initial"
+                animate="enter"
+                exit="exit">
                 <div className={styles.navLinkTop} onClick={scrollToTopMobile}>Home</div>
               </motion.li>
               <motion.li
                 custom={2}
                 variants={slide}
-                initial="initial" 
-                animate="enter" 
+                initial="initial"
+                animate="enter"
                 exit="exit"
               >
-              <Link href="#about" scroll={true} onClick={closeMobileNav}>About</Link> 
+                <Link href="#about" scroll={true} onClick={closeMobileNav}>About</Link>
               </motion.li>
               <motion.li
                 custom={3}
                 variants={slide}
-                initial="initial" 
-                animate="enter" 
+                initial="initial"
+                animate="enter"
                 exit="exit"
               >
                 <Link href="#projects" scroll={true} onClick={closeMobileNav}>Projects</Link>
@@ -176,8 +182,8 @@ const NavBar = ({ setNavbarHeight, isInView }) => {
               <motion.li
                 custom={4}
                 variants={slide}
-                initial="initial" 
-                animate="enter" 
+                initial="initial"
+                animate="enter"
                 exit="exit"
               >
                 <Link href="#contact" scroll={true} onClick={closeMobileNav}>Contact</Link>

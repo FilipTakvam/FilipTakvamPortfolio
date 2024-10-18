@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from '../styles/about.module.scss';
 import { useAnimationControls, motion } from "framer-motion"
@@ -23,14 +23,18 @@ const items = {
   },
 };
 
+type SectionProps = {
+  setIsInView: (isInView: boolean) => void,
+}
 
-const About = ({ setIsInView, navbarHeight }) => {
+
+const About = ({ setIsInView }: SectionProps) => {
 
   const [inViewRef, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const animationControls = useAnimationControls();
   const talkControls = useAnimationControls();
 
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {

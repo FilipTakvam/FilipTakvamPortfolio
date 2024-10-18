@@ -3,7 +3,12 @@ import React, { useEffect } from 'react';
 import styles from './styles/loading.module.scss';
 import Image from 'next/image';
 
-function LoadingScreen({imageCount, finishedCount}) {
+type LoadingScreenProps = {
+  imageCount: number,
+  finishedCount: number,
+}
+
+function LoadingScreen({imageCount, finishedCount}: LoadingScreenProps) {
   useEffect(() => {
     // Applying on mount
     document.body.style.overflow = "hidden";

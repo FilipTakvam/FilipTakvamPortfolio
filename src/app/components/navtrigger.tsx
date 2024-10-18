@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from '../styles/navtrigger.module.scss';
 
-function NavTrigger({ isMobileNavOpen, setIsMobileNavOpen, setIsActive, isActive }) {
+type NavTriggerProps = {
+    isMobileNavOpen: boolean,
+    setIsMobileNavOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    setIsActive: React.Dispatch<React.SetStateAction<boolean>>,
+    isActive: boolean,
+}
+
+function NavTrigger({ isMobileNavOpen, setIsMobileNavOpen, setIsActive, isActive }: NavTriggerProps) {
     const handleToggle = () => {
         setIsMobileNavOpen(!isMobileNavOpen);
         setIsActive(!isActive);

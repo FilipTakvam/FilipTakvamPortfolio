@@ -11,7 +11,7 @@ import FullscreenVideo from '../components/fullvideo';
 
 export default function SafetyScanningRadar() {
 
-    const [imageCount, setImageCount] = useState(0);
+    const [imageCount, setImageCount] = useState<number>(0);
 
     useEffect(() => {
       const storedImageCount = localStorage.getItem('imageCount');

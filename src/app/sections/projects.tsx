@@ -48,7 +48,11 @@ const imageAnimation = {
   },
 };
 
-const Projects = ({ navbarHeight }) => {
+type SectionProps = {
+  navbarHeight: number,
+}
+
+const Projects = ({ navbarHeight }: SectionProps) => {
   const projects = [
     { name: "Maxivent OW", link: "/maxiventow" },
     { name: "Crushed speaker", link: "/crushedspeaker" },
@@ -56,8 +60,8 @@ const Projects = ({ navbarHeight }) => {
     { name: "Safety scanning radar", link: "/safetyscanningradar" },
   ];
 
-  const container = useRef(null);
-  const [activeProject, setActiveProject] = useState(0);
+  const container = useRef<HTMLDivElement | null>(null);
+  const [activeProject, setActiveProject] = useState<number>(0);
 
   const [inViewRef, isInView] = useInView({
     threshold: 0.5,

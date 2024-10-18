@@ -18,7 +18,11 @@ const iconVariants = {
   animate: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.33, 1, 0.68, 1]}},
 };
 
-function Hero({ navbarHeight }) {
+type SectionProps = {
+  navbarHeight: number,
+}
+
+function Hero({ navbarHeight } : SectionProps) {
 
   return (
     <section id="home" className={`${styles.heroSection} wrapper`} style={{ top: `${navbarHeight}px`, height: `calc(100svh - ${navbarHeight}px)` }}>

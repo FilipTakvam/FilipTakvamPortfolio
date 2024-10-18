@@ -4,7 +4,6 @@ import emailjs from '@emailjs/browser';
 import { useAnimationControls, motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ClipLoader from "react-spinners/ClipLoader";
-import Message from '../components/message';
 
 import { BiLogoBehance, BiLogoInstagram, BiLogoLinkedinSquare, BiLogoGithub } from 'react-icons/bi'
 import { IoMdSend } from 'react-icons/io'
@@ -12,30 +11,40 @@ import { IoMdSend } from 'react-icons/io'
 const Contact = () => {
 
   const [sent, setSent] = useState(true);
-  const [sending, setSending] = useState(false);
+  const [sending, setSending] = useState<boolean>(false);
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "none";
   const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "none";
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_USER_ID ?? "none";
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSending(true);
+    setSending(true); // Set sending state to true
 
-    emailjs.sendForm(serviceID, templateID, form.current, publicKey)
-      .then((result) => {
-        e.target.reset();
-        setSent(true);
-        setSending(false);
+    if (form.current) {
+      try {
+        // Await the email sending process
+        await emailjs.sendForm(serviceID, templateID, form.current, publicKey);
+        form.current.reset(); // Reset the form after sending
+        setSent(true); // Indicate the email was sent successfully
+
+        // Reset sent state after 3 seconds
         setTimeout(() => {
-          setSent(false);
+          setSent(false); // Reset sent state after 3 seconds
         }, 3000);
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
+      } catch (error: any) {
+        console.error("Email sending failed:", error.text); // Log the error
+        // You might want to add additional error handling here if needed
+      } finally {
+        setSending(false); // Reset sending state whether successful or not
+      }
+    } else {
+      console.error("Form reference is null."); // Log if form reference is null
+      setSending(false); // Reset sending state if form is null
+    }
   };
+
 
   const [inViewRef, isInView] = useInView({ threshold: 0.2 });
   const letsTalkControls = useAnimationControls();
@@ -61,7 +70,7 @@ const Contact = () => {
           <div className={styles.inputrow}>
             <div className={styles.inputContainer}>
               <label>Name*</label>
-              <input type="text" required name="user_name"/>
+              <input type="text" required name="user_name" />
             </div>
             <div className={styles.inputContainer}>
               <label>Email*</label>

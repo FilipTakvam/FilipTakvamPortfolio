@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/message.module.scss';
 
-const Message = ({navbarHeight}) => {
+const Message = ({navbarHeight}: {navbarHeight: number}) => {
 
   return (
         <div className={`${styles.container} acceleratedRendering`} style={{ top: `${navbarHeight}px` }}>
